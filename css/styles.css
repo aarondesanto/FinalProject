@@ -12,72 +12,25 @@ body {
   padding: 0;
 }
 #map {
-  height: 50%;
+  height: 500px;
   width: 50%;
+  z-index: -1;
 }
-.shadow-drop {
-  position: absolute;
-  top: 80px;
-  height: 330px;
+.navbar {
   width: 100%;
-  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  z-index: 1;
+  background-color: #fff;
+  top: 0;
 }
-.thanks-for-using {
-  position: absolute;
-  top: 90px;
+.navbar ul a li {
+  display: inline-block;
+}
+section {
+  height: 640px;
+  width: 100%;
+  padding-top: 30px;
+}
+section h2 {
   text-align: center;
-  color: #fff;
-}
-.try-fb-please {
-  position: absolute;
-  top: 180px;
-  left: 30px;
-  width: 80%;
-  text-align: center;
-  font-size: 16px;
-  color: #fff;
-}
-.login-list {
-  position: absolute;
-  top: 212px;
-  left: 40px;
-  width: 80%;
-  margin: 10px auto;
-  color: #fff;
-}
-.fb-pro {
-  width: 70%;
-  margin: 5px auto;
-  list-style: square;
-}
-.login-button {
-  position: absolute;
-  left: 88px;
-  top: 350px;
-  height: 42px;
-  width: 142px;
-  border: none;
-  font-size: 16px;
-  color: #fff;
-  background-color: #38d;
-}
-.login-button:hover {
-  background-color: #27c;
-}
-.login-button:active {
-  background-color: #38d;
-}
-img {
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -ms-filter: blur(5px);
-  -o-filter: blur(5px);
-  filter: blur(5px);
-}
-.phone-screen {
-  position: relative;
-  height: 480px;
-  width: 320px;
-  border: 1px solid #000;
-  border-radius: 10px;
 }

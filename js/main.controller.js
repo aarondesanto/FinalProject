@@ -1,57 +1,87 @@
-function initMap() {
-  var pointA = new google.maps.LatLng(42.344836, -83.034109),
-      pointB = new google.maps.LatLng(42.358775, -82.999048),
-      waypts = [
-                  {
-                    location: new google.maps.LatLng(42.339094, -83.030054),
-                    stopover: false
-                  },
-                  {
-                    location: new google.maps.LatLng(42.346977, -83.012180),
-                    stopover: false
-                  }
-              ],
-      myOptions = {
-        zoom: 7,
-        center: pointA
-      },
-      map = new google.maps.Map(document.getElementById('map'), myOptions),
-      // Instantiate a directions service.
-      directionsService = new google.maps.DirectionsService,
-      directionsDisplay = new google.maps.DirectionsRenderer({
-        map: map
-      }),
-      markerA = new google.maps.Marker({
-        position: pointA,
-        title: "point A",
-        label: "A",
-        map: map
-      }),
-      markerB = new google.maps.Marker({
-        position: pointB,
-        title: "point B",
-        label: "B",
-        map: map
-      });
+var app = angular.module('myApp');
 
-  // get route from A to B
-  calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB, waypts);
-}
+app.controller('maincontroller', function($scope) {
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB, waypts) {
-  directionsService.route({
-    origin: pointA,
-    destination: pointB,
-    waypoints: waypts,
-    optimizeWaypoints: true,
-    travelMode: google.maps.TravelMode.DRIVING
-  }, function(response, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
-    } else {
-      window.alert('Directions request failed due to ' + status);
-    }
-  });
-}
+  var rides = [
+    {name: "Farm to (picnic)Table",
+    area: "East and Riverfront"
+    miles: 11.4,
+    time: 64,
+    stops: 10
+    },
+    {name: "Beers & Gears"
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Trails & Cocktails",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Dine Fine & White Lines",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {nam: "Fresh Air & Casual Fare",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Corktown Classic",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Tacos & Tequila",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Museums & ",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "I Brake for Art",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Rockin' Roll",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Stadium Cycle",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Brunch on Bikes",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    },
+    {name: "Sunset & Spokes",
+    area: "East and Riverfront",
+    miles: "11.4 mi",
+    time: "1h 4m",
+    stops:
+    }];
 
-initMap();
+  $scope.ellensArray = rides;
+
+});
